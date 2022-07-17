@@ -22,22 +22,19 @@ class GraphNode {
 
 
 
-// start by building a trinary graph
 class Graph {
   constructor(duration) {
-    this.root = null;
+    const rootNode = new GraphNode(0)
+    this.root = rootNode;
     this.duration = duration
   }
 
+  // Build insert method
   insert(price) {
     console.log(`Inserting ${price}
     ---------------------------`);
-    if (!this.root) {
-      const rootNode = new GraphNode(price);
-      this.root = rootNode;
-    }
-    // if there is a root, traverse to every terminal node in the graph
-    else {
+
+    // traverse to every terminal node in the graph
       let stack = [this.root];
       while (stack.length) {
         let currentNode = stack.pop();
