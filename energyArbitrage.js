@@ -13,23 +13,11 @@ and then returns the max profit you could make by arbitraging energy prices.
 */
 
 function maxProfit(prices, duration = 1) {
-  let graph = new Graph(duration);
-  prices.forEach(price => {
-    graph.insert(price);
-  })
+  // Initialize the graph
 
-  let max = -Infinity;
-  const stack = [graph.root];
-  while (stack.length) {
-    let currentNode = stack.pop();
-    let nextNodes = currentNode.getNext();
-    if (currentNode.profit > max) max = currentNode.profit;
+  // Insert all prices into the graph
 
-    nextNodes.forEach(node => {
-      if (node) stack.push(node)
-    })
-  }
-  return max;
+  // Traverse the graph to find the max profit
 }
 
 module.exports = maxProfit;
