@@ -19,9 +19,6 @@ class GraphNode {
 }
 
 
-
-
-
 class Graph {
   constructor(duration) {
     const rootNode = new GraphNode(0)
