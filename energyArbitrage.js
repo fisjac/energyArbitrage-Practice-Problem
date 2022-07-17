@@ -12,7 +12,7 @@ Write a function that takes in:
 and then returns the max profit you could make by arbitraging energy prices.
 */
 
-function maxProfit(prices, duration) {
+function maxProfit(prices, duration = 1) {
   let graph = new Graph(duration);
   prices.forEach(price => {
     graph.insert(price);
