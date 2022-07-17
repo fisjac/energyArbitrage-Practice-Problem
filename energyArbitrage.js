@@ -14,7 +14,6 @@ and then returns the max profit you could make by arbitraging energy prices.
 
 function maxProfit(prices, duration) {
   let graph = new Graph(duration);
-  graph.insert(0);
   prices.forEach(price => {
     graph.insert(price);
   })
@@ -44,3 +43,6 @@ const prices2 = [
   20,20,40,80
 ]
 console.log(maxProfit(prices2, 2))
+
+
+module.exports = maxProfit;

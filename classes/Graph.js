@@ -31,8 +31,8 @@ class Graph {
 
   // Build insert method
   insert(price) {
-    console.log(`Inserting ${price}
-    ---------------------------`);
+    // console.log(`Inserting ${price}
+    // ---------------------------`);
 
     // traverse to every terminal node in the graph
     let stack = [this.root];
