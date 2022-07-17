@@ -49,5 +49,11 @@ describe('Graph', () => {
       expect(graph2.root.charge.charge).to.not.be.null;
       expect(graph2.root.charge.charge.charge).to.be.null;
     })
+
+    it('calculates and updates profit for the next node in the path', ()=> {
+      expect(graph1.root.charge.profit).to.equal(-1);
+      expect(graph1.root.charge.wait.profit).to.equal(-1);
+      expect(graph1.root.charge.wait.discharge.profit).to.equal(2);
+    })
   })
 })

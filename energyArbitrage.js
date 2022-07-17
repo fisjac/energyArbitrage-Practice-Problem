@@ -32,17 +32,4 @@ function maxProfit(prices, duration) {
   return max;
 }
 
-const prices1 = [
-  48.09, 44.83, 43.53, 40.86,
-  61.50, 80.00, 115.00, 120.00,
-  100.00, 70.00, 61.13, 80.24
-]
-console.log(maxProfit(prices1, 4))
-
-const prices2 = [
-  20,20,40,80
-]
-console.log(maxProfit(prices2, 2))
-
-
 module.exports = maxProfit;
