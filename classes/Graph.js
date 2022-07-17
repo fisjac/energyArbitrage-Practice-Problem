@@ -28,10 +28,8 @@ class Graph {
 
   // Build insert method
   insert(price) {
-    // console.log(`Inserting ${price}
-    // ---------------------------`);
 
-    // traverse to every terminal node in the graph
+    // Traverse to every terminal node in the graph
     let stack = [this.root];
     while (stack.length) {
       let currentNode = stack.pop();
@@ -45,7 +43,7 @@ class Graph {
           // Set newNodes energy to currentNode's energy + 1
           currentNode.charge.energy = currentNode.energy + 1;
           currentNode.charge.profit = currentNode.profit - price;
-          // console.log(`added to charge path. Energy is now at ${currentNode.charge.energy}`);
+
         };
 
         // if there's energy in the battery add to discharge path
@@ -55,7 +53,7 @@ class Graph {
           // Set newNodes energy to currentNode's energy + 1
           currentNode.discharge.energy = currentNode.energy - 1;
           currentNode.discharge.profit = currentNode.profit + price;
-          // console.log(`added to discharge path. Energy is now at ${currentNode.discharge.energy}`);
+
         };
 
         // add new node to wait path
@@ -64,7 +62,7 @@ class Graph {
         // maintain energy level
         currentNode.wait.energy = currentNode.energy;
         currentNode.wait.profit = currentNode.profit;
-        // console.log(`added to wait path. Energy is now at ${currentNode.wait.energy}`);
+
       } else {
         [chargeNode, waitNode, dischargeNode].forEach(nextNode => {
           if (nextNode) stack.push(nextNode);
